@@ -1,0 +1,9 @@
+// Đường dẫn luôn bắt đầu ở src
+{
+    "compilerOptions": {
+      "module": "CommonJS",
+      "target": "ES6",
+      "baseUrl": "./src",
+    },
+    "exclude": ["src/**/*"]
+}

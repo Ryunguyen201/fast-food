@@ -1,0 +1,145 @@
+// Common CSS
+@use "sass:map";
+@import "theme";
+@import "responsive";
+@import "@fontsource/be-vietnam-pro";
+html,
+body {
+    margin: 0;
+    
+}
+
+* {
+    font-family: "Be Vietnam Pro";
+    padding: 0;
+    margin: 0;
+}
+
+.container {
+    max-width: 1170px;
+    width: 100%;
+    padding: 0 15px;
+    margin: 0 auto;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap !important;
+}
+
+
+// áp dụng cho cả màn hình lớn và màn hình nhỏ
+.col-6 {
+    flex: 0 0 50%;
+    max-width: 50%;
+}
+
+.col-lg-3 {
+    flex: 0 0 25%;
+    max-width: 25%;
+}
+
+.col-lg-6 {
+    flex: 0 0 50%;
+    max-width: 50%;
+}
+
+.col-lg-9 {
+    flex: 0 0 75%;
+    max-width: 75%;
+}
+
+
+
+.button-submit {
+    font-size: 14px;
+    color: #fff;
+    font-weight: 800;
+    text-transform: uppercase;
+    display: inline-block;
+    padding: 16px 30px 17px;
+    background: map.get($theme-colors, 'main');
+    border: none;
+    height: 100%;
+}
+
+// Giản cách phần tử sản phẩm
+.pl-pr-10 {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+//Thiết bị Medium thì nhận CSS này
+@include Responsive($DESKTOP) {
+    .col-xl-3 {
+        flex: 0 0 25%;
+        max-width: 25%;
+    }
+
+    .col-xl-6 {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+}
+
+@include Responsive($TABLET_DEVICE) {
+    .container {
+        max-width: 720px !important;
+    }
+
+    .col-md-6 {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+
+    .col-md-12 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+    .col-md-4 {
+        flex: 0 0 33.3333333333%;
+        max-width: 33.333333333%;
+    }
+}
+
+@include Responsive($MEDIUM_DEVICE) {
+    .col-lg-3 {
+        flex: 0 0 25%;
+        max-width: 25%;
+    }
+
+    .col-xl-12 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+}
+
+@include Responsive($WIDE_MOBILE) {
+    .container {
+        max-width: 540px !important;
+    }
+
+    .col-sm-6 {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+
+    .col-sm-12 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+}
+
+
+@include Responsive($SMALL_DEVICES) {
+    .container {
+        max-width: 350px !important;
+    }
+    
+    .col-xs-12 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+}
